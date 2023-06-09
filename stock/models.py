@@ -18,9 +18,11 @@ class User(AbstractUser):
         help_text='Specific permissions for this user.',
         verbose_name='user permissions',
     )
+    simulated_account = models.BooleanField(default=True)
 
     def __str__(self):
         return self.username
+
 
 
 class Stock(models.Model):
@@ -35,7 +37,7 @@ class Stock(models.Model):
     volume = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.symbol 
+        return self.symbol
 
 
 class Portfolio(models.Model):
@@ -47,7 +49,6 @@ class Portfolio(models.Model):
 
 
 class Transaction(models.Model):
-
     TRANSACTION_TYPES = [
         ('buy', 'Buy'),
         ('sell', 'Sell')
