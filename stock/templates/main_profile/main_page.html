@@ -1,0 +1,75 @@
+<!-- templates/stock/main_page.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+    <h2>Welcome to Your Stock Simulator</h2>
+
+    <ul class="nav nav-tabs" id="mainTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="portfolio-tab" data-toggle="tab" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="news-tab" data-toggle="tab" href="#news">Stock Market News</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="charts-tab" data-toggle="tab" href="#charts">Stock Charts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="history-tab" data-toggle="tab" href="#history">Trade History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="stock-detail-tab" data-toggle="tab" href="#stock-detail">Stock Detail</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="stock-list-tab" data-toggle="tab" href="#stock-list"> Imported Stock List</a>
+        </li>
+        <!-- Add more tabs as needed -->
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="portfolio">
+            <h3>Your Portfolio</h3>
+            {% include 'main_profile/portfolio.html' %}
+            <!-- Display user's portfolio information here -->
+        </div>
+        <div class="tab-pane fade" id="news">
+            <h3>Stock Market News</h3>
+            <!-- Display latest stock market news or updates -->
+        </div>
+        <div class="tab-pane fade" id="charts">
+            <h3>Stock Charts</h3>
+            <!-- Display interactive stock charts or graphs -->
+        </div>
+        <div class="tab-pane fade" id="history">
+            <h3>Trade History</h3>
+            <!-- Display user's trade history or recent transactions -->
+        </div>
+        <div class="tab-pane fade" id="stock-detail">
+            <h3>Stock Detail</h3>
+            <!-- Include content for Stock Detail here -->
+            {% include 'stock/stock_detail.html' %}
+        </div>
+        <div class="tab-pane fade" id="stock-list">
+            <h3>Imported Stock Data</h3>
+            {% include 'stock/stock_list.html' %}
+        </div>
+        <!-- Add more tab panes as needed -->
+    </div>
+
+    <!-- Add jQuery and Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Add script for initializing Bootstrap tabs -->
+    <script>
+        $(document).ready(function () {
+            $('.nav-tabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
+    </script>
+
+{% endblock %}

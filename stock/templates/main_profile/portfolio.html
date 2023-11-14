@@ -1,0 +1,53 @@
+<!-- portfolio.html -->
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Stock Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Your Stock Portfolio</h1>
+        <p>Manage your stock holdings and track your investments.</p>
+    </header>
+
+    <section id="stocks">
+        <h2>Stock Holdings</h2>
+        <div class="stock">
+            <h3>Company A</h3>
+            <p>Symbol: ABC</p>
+            <p>Shares: 50</p>
+            <p>Average Price: $100</p>
+            <p>Current Price: $120</p>
+            <p>Market Value: $6,000</p>
+            <p>Profit/Loss: +$1,000</p>
+        </div>
+        <div class="stock">
+            <h3>Company B</h3>
+            <p>Symbol: XYZ</p>
+            <p>Shares: 30</p>
+            <p>Average Price: $50</p>
+            <p>Current Price: $45</p>
+            <p>Market Value: $1,350</p>
+            <p>Profit/Loss: -$150</p>
+        </div>
+        <!-- Add more stocks as needed -->
+    </section>
+
+    <section id="performance">
+        <h2>Portfolio Performance</h2>
+        <p>Total Portfolio Value: $7,350</p>
+        <p>Total Profit/Loss: +$850</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Stock Simulator. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* static/css/stock_style.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #443a54 !important; /* Slightly less dark purple */
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #615478; /* Adjusted container color */
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.nav-tabs {
+    margin-top: 20px;
+    border-bottom: 2px solid #615478;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: #bfb5e1;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+    background-color: #443a54;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #615478;
+    color: #ffffff;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background-color: #615478;
+    border-bottom: 2px solid #ffffff;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    padding: 20px;
+    border: 1px solid #615478;
+    border-radius: 4px;
+    background-color: #544a64; /* Adjusted tab pane color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional styling for specific tabs if needed */
+
+.stock-details-graph {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stock-details {
+    flex-basis: 50%;
+}
+
+.stock-item {
+    margin-bottom: 20px;
+}
+
+.stock-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333333;
+}
+
+.stock-graph {
+    flex-basis: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 90px; /* Fixed the unit issue here */
+}
+
+#graph {
+    width: 100%;
+    height: 400px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Styling for the stock details section */
+.stock-item {
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stock-symbol {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
