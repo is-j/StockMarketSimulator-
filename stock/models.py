@@ -18,7 +18,6 @@ class User(AbstractUser):
         help_text='Specific permissions for this user.',
         verbose_name='user permissions',
     )
-    simulated_account = models.BooleanField(default=True)
 
     def __str__(self):
         return self.username

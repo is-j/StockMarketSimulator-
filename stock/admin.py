@@ -7,7 +7,8 @@ from .models import Portfolio
 
 admin.site.register(Stock)
 admin.site.register(Transaction)
-admin.site.register(User)
 admin.site.register(Portfolio)
 
 # Register your models here.
+# accounts/admin.py
+

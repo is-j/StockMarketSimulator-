@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .nav-tabs {

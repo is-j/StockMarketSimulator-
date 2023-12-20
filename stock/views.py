@@ -1,28 +1,38 @@
+# stock/views.py
 import datetime
 import os
 from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Stock
-from django.shortcuts import render, get_object_or_404
 import requests
 from datetime import date
 import plotly.graph_objs as go
-from django.shortcuts import render
-#Stock Detail View: This view provides detailed information about 
-# a specific stock, including its current price, description, 
-# and any other relevant data.
+from plotly.offline import plot
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.shortcuts import reverse
+from django.http import HttpResponseRedirect
+
 API_KEY = os.environ.get('API_KEY')
+
+# Stock Detail View: This view provides detailed information about
+# a specific stock, including its current price, description,
+# and any other relevant data.
+class CustomLoginView(LoginView):
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        return HttpResponseRedirect(reverse('main_page'))
+
+
+@login_required
+def main_page(request):
+    # Your main page logic goes here
+    return render(request, 'main_profile/main_page.html')
+
 
 def index(request):
     return HttpResponse("This is the stock index")
 
-
-
-
-import json
-
-import plotly.graph_objs as go
-from plotly.offline import plot
-from django.shortcuts import render
 
 def stock_list(request):
     stocks = Stock.objects.all()
@@ -55,6 +65,7 @@ def stock_list(request):
 
     return render(request, 'stock/stock_list.html', {'stocks': stocks, 'plot_html': plot_div})
 
+
 def stock_detail(request):
     if request.method == 'POST':
         print(request.POST)
@@ -82,9 +93,9 @@ def stock_detail(request):
 
             stock = Stock(
                 symbol=symbol,
-                date = date,
-                end_date = end_date, 
-                start_date = start_date,
+                date=date,
+                end_date=end_date,
+                start_date=start_date,
                 open_price=open_price,
                 high_price=high_price,
                 low_price=low_price,
@@ -96,4 +107,3 @@ def stock_detail(request):
         return HttpResponse("Data imported successfully.")
 
     return render(request, 'stock/stock_detail.html')
-
